@@ -1,0 +1,36 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="CDF6C936-AACC-3A7B-DF47-9E2AD3EFEA44" name="Productos">
+<createdBy>Nehue</createdBy>
+<createdTime>2025-10-19 13:54:47 UTC</createdTime>
+<ownerDesignName>base de datos restaurat</ownerDesignName>
+<ordsAlias>table_8</ordsAlias>
+<abbreviation>p</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Id_productos" id="2B75486E-F56D-3CBD-96D4-BE641461A74F">
+<createdBy>Nehue</createdBy>
+<createdTime>2025-10-19 13:55:27 UTC</createdTime>
+<ownerDesignName>base de datos restaurat</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C47084A3-C5B5-7FCC-7A2B-35B62808C2AF" name="Productos_PK">
+<createdBy>Nehue</createdBy>
+<createdTime>2025-10-19 13:55:27 UTC</createdTime>
+<ownerDesignName>base de datos restaurat</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2B75486E-F56D-3CBD-96D4-BE641461A74F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,82 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D0AEAD1B-DE8C-E88C-71DA-120B00BE8985" name="Detalle_pedido">
+<createdBy>Nehue</createdBy>
+<createdTime>2025-10-19 13:48:56 UTC</createdTime>
+<ownerDesignName>base de datos restaurat</ownerDesignName>
+<ordsAlias>table_6</ordsAlias>
+<abbreviation>d</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Id_detalle" id="A21DD108-5451-C94A-4B5E-51AFB6E6AB0B">
+<createdBy>Nehue</createdBy>
+<createdTime>2025-10-19 13:52:36 UTC</createdTime>
+<ownerDesignName>base de datos restaurat</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Id_pedido" id="526B21E9-89AA-AFB0-3DB6-F88D768A42D4">
+<createdBy>Nehue</createdBy>
+<createdTime>2025-10-19 13:52:36 UTC</createdTime>
+<ownerDesignName>base de datos restaurat</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Id_producto" id="946E292C-9829-647C-96E0-1F4CA13C85C6">
+<createdBy>Nehue</createdBy>
+<createdTime>2025-10-19 13:52:36 UTC</createdTime>
+<ownerDesignName>base de datos restaurat</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Cantidad" id="F00F597C-EE37-A9AC-9AF0-925643E8B89A">
+<createdBy>Nehue</createdBy>
+<createdTime>2025-10-19 13:52:36 UTC</createdTime>
+<ownerDesignName>base de datos restaurat</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Subtotal" id="C9524B9B-5D13-870D-055E-C229E8631A27">
+<createdBy>Nehue</createdBy>
+<createdTime>2025-10-19 13:52:36 UTC</createdTime>
+<ownerDesignName>base de datos restaurat</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="0B3A2EC8-5797-FC01-25A7-8812C0D29719" name="Detalle_pedido_PK">
+<createdBy>Nehue</createdBy>
+<createdTime>2025-10-19 13:52:36 UTC</createdTime>
+<ownerDesignName>base de datos restaurat</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A21DD108-5451-C94A-4B5E-51AFB6E6AB0B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

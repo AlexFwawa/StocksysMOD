@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="781F7BEB-90C0-8CC1-A644-9E7A0C94AA7A" mainViewID="9D8E43E3-059E-E28B-AE15-8A087EAC4AC1">
+<createdBy>Nehue</createdBy>
+<createdTime>2025-10-19 13:26:45 UTC</createdTime>
+<ownerDesignName>base de datos restaurat</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</LogicalDesign>

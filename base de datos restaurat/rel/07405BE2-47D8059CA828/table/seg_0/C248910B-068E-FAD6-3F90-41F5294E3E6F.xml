@@ -1,0 +1,58 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C248910B-068E-FAD6-3F90-41F5294E3E6F" name="Pedido">
+<createdBy>Nehue</createdBy>
+<createdTime>2025-10-19 13:42:58 UTC</createdTime>
+<ownerDesignName>base de datos restaurat</ownerDesignName>
+<ordsAlias>table_4</ordsAlias>
+<abbreviation>p</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Id_pedido" id="DA2D9A42-434B-A1AA-070C-8BA5A6FE9616">
+<createdBy>Nehue</createdBy>
+<createdTime>2025-10-19 13:44:55 UTC</createdTime>
+<ownerDesignName>base de datos restaurat</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fecha" id="28BB0698-F9F4-494D-721A-4C6DE504A19C">
+<createdBy>Nehue</createdBy>
+<createdTime>2025-10-19 13:44:55 UTC</createdTime>
+<ownerDesignName>base de datos restaurat</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Id_cliente" id="E59BE382-4257-7B5C-1BAF-50AE9463E563">
+<createdBy>Nehue</createdBy>
+<createdTime>2025-10-19 13:44:55 UTC</createdTime>
+<ownerDesignName>base de datos restaurat</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="FBEEE54A-48D6-70F4-6BDA-5594FC0F4B5D" name="Pedido_PK">
+<createdBy>Nehue</createdBy>
+<createdTime>2025-10-19 13:44:55 UTC</createdTime>
+<ownerDesignName>base de datos restaurat</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DA2D9A42-434B-A1AA-070C-8BA5A6FE9616"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

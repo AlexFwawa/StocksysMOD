@@ -1,0 +1,119 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="6BECBE40-C671-C71B-6AB6-C7CEC136CDA4" name="Empleados">
+<createdBy>Nehue</createdBy>
+<createdTime>2025-10-19 13:28:01 UTC</createdTime>
+<ownerDesignName>base de datos restaurat</ownerDesignName>
+<ordsAlias>table_1</ordsAlias>
+<abbreviation>e</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Legajo" id="251E035B-6867-BEC5-775D-5F74AC37F55C">
+<createdBy>Nehue</createdBy>
+<createdTime>2025-10-19 13:32:13 UTC</createdTime>
+<ownerDesignName>base de datos restaurat</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Nombre" id="DD266A67-C2DB-1131-550A-58A3933001A8">
+<createdBy>Nehue</createdBy>
+<createdTime>2025-10-19 13:34:07 UTC</createdTime>
+<ownerDesignName>base de datos restaurat</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Apellido" id="76297570-15B2-F960-8ADD-60806B3FBF15">
+<createdBy>Nehue</createdBy>
+<createdTime>2025-10-19 13:35:01 UTC</createdTime>
+<ownerDesignName>base de datos restaurat</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Salario" id="D0E83648-1990-3577-81A4-A340D64E8A38">
+<createdBy>Nehue</createdBy>
+<createdTime>2025-10-19 13:39:38 UTC</createdTime>
+<ownerDesignName>base de datos restaurat</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Cargo" id="7F5B9F00-F50E-A7FC-2B6B-A902BDB41E77">
+<createdBy>Nehue</createdBy>
+<createdTime>2025-10-19 13:39:38 UTC</createdTime>
+<ownerDesignName>base de datos restaurat</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Fecha_ingreso" id="E5C39F75-D7C6-8FD6-9250-E4BDE3B00325">
+<createdBy>Nehue</createdBy>
+<createdTime>2025-10-19 13:39:38 UTC</createdTime>
+<ownerDesignName>base de datos restaurat</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_dpto" id="B40F8FB9-504F-44A1-5ABD-9A3F0B577CE2">
+<createdBy>Nehue</createdBy>
+<createdTime>2025-10-19 13:40:40 UTC</createdTime>
+<ownerDesignName>base de datos restaurat</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E6811E0A-4726-8BA7-10C7-1201F0FD8B53" referredColumn="A21DD108-5451-C94A-4B5E-51AFB6E6AB0B"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="F76287CC-A0F6-63DB-817B-3471A3F416E7" name="Empleados_PK">
+<createdBy>Nehue</createdBy>
+<createdTime>2025-10-19 13:32:13 UTC</createdTime>
+<ownerDesignName>base de datos restaurat</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="251E035B-6867-BEC5-775D-5F74AC37F55C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="AC7F1866-8CCC-3798-7042-4C7D7EC38AE5" name="Empleados_Detalle_pedido_FK">
+<createdBy>Nehue</createdBy>
+<createdTime>2025-10-19 13:57:30 UTC</createdTime>
+<ownerDesignName>base de datos restaurat</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B40F8FB9-504F-44A1-5ABD-9A3F0B577CE2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

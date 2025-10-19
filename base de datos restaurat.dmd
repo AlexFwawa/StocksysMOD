@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="base de datos restaurat" id="18F3137E-A414-C1ED-7414-C4606239FE20" version="3.5">
+<createdBy>Nehue</createdBy>
+<createdTime>2025-10-19 13:26:45 UTC</createdTime>
+<ownerDesignName>base de datos restaurat</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>18F3137E-A414-C1ED-7414-C4606239FE20</designId>
+</OSDM_Design>

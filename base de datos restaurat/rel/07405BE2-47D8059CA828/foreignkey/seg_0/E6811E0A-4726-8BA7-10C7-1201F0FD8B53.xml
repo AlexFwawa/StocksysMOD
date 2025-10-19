@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="E6811E0A-4726-8BA7-10C7-1201F0FD8B53" containerWithKeyObject="6BECBE40-C671-C71B-6AB6-C7CEC136CDA4" localFKIndex="AC7F1866-8CCC-3798-7042-4C7D7EC38AE5" name="Empleados_Detalle_pedido_FK">
+<createdBy>Nehue</createdBy>
+<createdTime>2025-10-19 13:57:30 UTC</createdTime>
+<ownerDesignName>base de datos restaurat</ownerDesignName>
+<referredTableLongName>Detalle_pedido</referredTableLongName>
+<deleteRule>CASCADE</deleteRule>
+<referredTableID>D0AEAD1B-DE8C-E88C-71DA-120B00BE8985</referredTableID>
+<keyObject>0B3A2EC8-5797-FC01-25A7-8812C0D29719</keyObject>
+<referredKeyID>0B3A2EC8-5797-FC01-25A7-8812C0D29719</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>Id_detalle</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

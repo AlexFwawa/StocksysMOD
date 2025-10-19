@@ -1,0 +1,72 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="9C10F98C-9F8A-1DE3-8521-E4256AB5E224" name="Cliente">
+<createdBy>Nehue</createdBy>
+<createdTime>2025-10-19 13:45:18 UTC</createdTime>
+<ownerDesignName>base de datos restaurat</ownerDesignName>
+<ordsAlias>table_5</ordsAlias>
+<abbreviation>c</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Id_cliente" id="4FE50992-D5A7-5961-463D-B41D060A004D">
+<createdBy>Nehue</createdBy>
+<createdTime>2025-10-19 13:48:45 UTC</createdTime>
+<ownerDesignName>base de datos restaurat</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Nombre" id="B328A8F5-43B5-6746-AB8A-40626225181F">
+<createdBy>Nehue</createdBy>
+<createdTime>2025-10-19 13:48:45 UTC</createdTime>
+<ownerDesignName>base de datos restaurat</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Contacto" id="A86160D6-1EC2-1435-8F62-DA3AB10C72B3">
+<createdBy>Nehue</createdBy>
+<createdTime>2025-10-19 13:48:45 UTC</createdTime>
+<ownerDesignName>base de datos restaurat</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="tipo_cliente" id="1E8EECAE-DFE4-DE2C-7739-F2186887C43B">
+<createdBy>Nehue</createdBy>
+<createdTime>2025-10-19 13:48:45 UTC</createdTime>
+<ownerDesignName>base de datos restaurat</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="9002EACD-D372-A3CE-4169-63ECED452BBD" name="Cliente_PK">
+<createdBy>Nehue</createdBy>
+<createdTime>2025-10-19 13:48:45 UTC</createdTime>
+<ownerDesignName>base de datos restaurat</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4FE50992-D5A7-5961-463D-B41D060A004D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
