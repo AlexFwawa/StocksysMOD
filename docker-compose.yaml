@@ -1,0 +1,50 @@
+services:
+  postgres_db:
+    image: postgres:17-alpine
+    container_name: postgres_db
+    ports:
+      - "27017:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: always
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: "1234"
+      POSTGRES_DB: tfi
+    networks:
+      - tfi_network
+
+  backend:
+    build:
+      context: ./Backend
+      dockerfile: Dockerfile
+    container_name: backend_app
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres_db:5432/tfi
+    depends_on:
+      - postgres_db
+    restart: always
+    networks:
+      - tfi_network
+
+  frontend:
+    build:
+      context: ./Frontend
+      dockerfile: Dockerfile
+    container_name: frontend_app
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    restart: always
+    networks:
+      - tfi_network
+
+volumes:
+  postgres_data:
+
+networks:
+  tfi_network:
+    driver: bridge
