@@ -24,6 +24,7 @@ public class ProductoService {
     private final IngresoRepository ingresoRepository;
     private final EgresoRepository egresoRepository;
     private final ProductoMapper productoMapper;
+    private final AuditoriaService auditoriaService;
 
     public ProductoResponseDTO crearProducto(ProductoRequestDTO dto) {
 
@@ -43,8 +44,14 @@ public class ProductoService {
 
         Producto productoGuardado = productoRepository.save(producto);
 
+        auditoriaService.registrar(
+                "PRODUCTO_CREADO",
+                "Producto: " + productoGuardado.getNombre()
+        );
+
         return productoMapper.toDTO(productoGuardado);
     }
+
 
     public List<ProductoResponseDTO> obtenerProductos() {
 
@@ -87,6 +94,11 @@ public class ProductoService {
 
         productoRepository.save(producto);
 
+        auditoriaService.registrar(
+                "PRODUCTO_EDITADO",
+                "Producto: " + producto.getNombre()
+        );
+
         return productoMapper.toDTO(producto);
     }
 
@@ -102,7 +114,11 @@ public class ProductoService {
                 );
 
         producto.setActivo(false);
-
         productoRepository.save(producto);
+
+        auditoriaService.registrar(
+                "PRODUCTO_ELIMINADO",
+                "Producto: " + producto.getNombre()
+        );
     }
 }
