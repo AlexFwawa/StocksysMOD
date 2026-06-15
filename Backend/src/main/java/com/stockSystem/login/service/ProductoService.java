@@ -48,7 +48,8 @@ public class ProductoService {
 
     public List<ProductoResponseDTO> obtenerProductos() {
 
-        return productoRepository.findAllByOrderByCodProdAsc()
+        return productoRepository
+                .findByActivoTrueOrderByCodProdAsc()
                 .stream()
                 .map(productoMapper::toDTO)
                 .toList();
@@ -100,14 +101,8 @@ public class ProductoService {
                         )
                 );
 
-        // eliminar movimientos
-        ingresoRepository.deleteByProductoCodProd(id);
-        egresoRepository.deleteByProductoCodProd(id);
+        producto.setActivo(false);
 
-        // eliminar stock primero
-        stockRepository.delete(producto.getStock());
-
-        // eliminar producto
-        productoRepository.delete(producto);
+        productoRepository.save(producto);
     }
 }
