@@ -9,6 +9,7 @@ const Sidebar = ({ onLogout }) => {
   const location = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [settingsOpen, setSettingsOpen] = useState(false);
+  const [informesOpen, setInformesOpen] = useState(false);
   const userName = localStorage.getItem('user') || 'Admin';
 
   const navItems = [
@@ -19,13 +20,8 @@ const Sidebar = ({ onLogout }) => {
         <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" /><rect x="14" y="3" width="7" height="7" /><rect x="14" y="14" width="7" height="7" /><rect x="3" y="14" width="7" height="7" /></svg>
       ),
     },
-    {
-      path: '/informes',
-      label: 'Informes',
-      icon: (
-        <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10" /><line x1="12" y1="20" x2="12" y2="4" /><line x1="6" y1="20" x2="6" y2="14" /></svg>
-      ),
-    },
+      
+    
     {
       path: '/ventas',
       label: 'Ventas',
@@ -86,6 +82,48 @@ const Sidebar = ({ onLogout }) => {
               {item.label}
             </Link>
           ))}
+          <div className="sidebar-nav-group">
+            <button
+              className="sidebar-nav-item"
+              onClick={() =>
+                setInformesOpen(!informesOpen)
+              }>
+                <span className="sidebar-nav-icon">
+                  <svg viewBox="0 0 24 24">
+                    <line x1="18" y1="20" x2="18" y2="10" />
+                    <line x1="12" y1="20" x2="12" y2="4" />
+                    <line x1="6" y1="20" x2="6" y2="14" />
+                  </svg>
+                </span>
+                  Informes
+            </button>
+
+            {informesOpen && (
+
+              <div
+                style={{
+                paddingLeft: "2rem",
+                display: "flex",
+                flexDirection: "column",
+                gap: "0.3rem"
+                }}
+              >
+                <Link
+                  to="/informes"
+                  className="sidebar-nav-item"
+                >
+                  Movimientos
+              </Link>
+
+              <Link
+                to="/auditoria"
+                className="sidebar-nav-item"
+              >
+                Auditoría
+              </Link>
+              </div>
+            )}
+            </div>
         </nav>
 
         {/* Footer */}
