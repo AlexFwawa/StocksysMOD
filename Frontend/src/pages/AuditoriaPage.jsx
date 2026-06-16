@@ -1,37 +1,22 @@
 import { useEffect, useState } from "react";
 
-import DashboardLayout
-from "../components/layout/DashboardLayout";
+import DashboardLayout from "../components/layout/DashboardLayout";
+import { obtenerAuditorias } from "../services/auditoriaService";
 
-import { obtenerAuditorias }
-from "../services/auditoriaService";
+export default function AuditoriaPage({ onLogout }) {
 
-export default function AuditoriaPage({
-
-    onLogout
-
-}) {
-
-    const [auditorias, setAuditorias] =
-        useState([]);
+    const [auditorias, setAuditorias] = useState([]);
+    const [filtro, setFiltro] = useState("TODOS");
 
     useEffect(() => {
-
         cargarAuditorias();
-
     }, []);
 
     const cargarAuditorias = async () => {
-
         try {
-
-            const data =
-                await obtenerAuditorias();
-
+            const data = await obtenerAuditorias();
             setAuditorias(data);
-
         } catch (error) {
-
             console.error(
                 "Error cargando auditoria",
                 error
@@ -39,26 +24,62 @@ export default function AuditoriaPage({
         }
     };
 
+    const auditoriasFiltradas =
+        auditorias.filter(a => {
+
+            if (filtro === "TODOS")
+                return true;
+
+            if (filtro === "PRODUCTOS")
+                return a.accion.startsWith(
+                    "PRODUCTO"
+                );
+
+            if (filtro === "MOVIMIENTOS")
+                return (
+                    a.accion.includes("INGRESO")
+                    ||
+                    a.accion.includes("EGRESO")
+                );
+
+            return true;
+        });
+
+    const getActionClass = (accion) => {
+
+        switch (accion) {
+
+            case "PRODUCTO_CREADO":
+                return "audit-success";
+
+            case "PRODUCTO_EDITADO":
+                return "audit-warning";
+
+            case "PRODUCTO_ELIMINADO":
+                return "audit-danger";
+
+            case "INGRESO_REGISTRADO":
+                return "audit-info";
+
+            case "EGRESO_REGISTRADO":
+                return "audit-purple";
+
+            default:
+                return "";
+        }
+    };
+
     return (
 
-        <DashboardLayout
-            onLogout={onLogout}
-        >
+        <DashboardLayout onLogout={onLogout}>
 
             <div className="dashboard-header">
-
                 <div>
-
-                    <h1>
-                        Auditoría
-                    </h1>
-
+                    <h1>Auditoría</h1>
                     <p>
-                        Historial de acciones
+                        Historial de acciones del sistema
                     </p>
-
                 </div>
-
             </div>
 
             <div className="stats-grid">
@@ -79,55 +100,118 @@ export default function AuditoriaPage({
 
             <div className="table-container">
 
-                <table className="table">
+                <div className="table-toolbar">
 
-                    <thead>
+                    <div className="table-toolbar-left">
 
-                    <tr>
+                        <select
+                            value={filtro}
+                            onChange={(e) =>
+                                setFiltro(e.target.value)
+                            }
+                        >
 
-                        <th>Fecha</th>
+                            <option value="TODOS">
+                                Todos
+                            </option>
 
-                        <th>Usuario</th>
+                            <option value="PRODUCTOS">
+                                Productos
+                            </option>
 
-                        <th>Acción</th>
+                            <option value="MOVIMIENTOS">
+                                Movimientos
+                            </option>
 
-                        <th>Detalle</th>
+                        </select>
 
-                    </tr>
+                    </div>
 
-                    </thead>
+                </div>
 
-                    <tbody>
+                <div className="dashboard-card">
 
-                    {auditorias.map(a => (
+                    <table className="data-table">
 
-                        <tr key={a.id}>
+                        <thead>
 
-                            <td>
-                                {new Date(
-                                    a.fecha
-                                ).toLocaleString()}
-                            </td>
+                        <tr>
 
-                            <td>
-                                {a.usuario}
-                            </td>
+                            <th style={{ width: "150px" }}>
+                                Fecha
+                            </th>
 
-                            <td>
-                                {a.accion}
-                            </td>
+                            <th style={{ width: "220px" }}>
+                                Usuario
+                            </th>
 
-                            <td>
-                                {a.detalle}
-                            </td>
+                            <th style={{ width: "220px" }}>
+                                Acción
+                            </th>
+
+                            <th>
+                                Detalle
+                            </th>
 
                         </tr>
 
-                    ))}
+                        </thead>
 
-                    </tbody>
+                        <tbody>
 
-                </table>
+                        {auditoriasFiltradas.map(a => (
+
+                            <tr key={a.id}>
+
+                                <td>
+
+                                    {new Date(a.fecha)
+                                        .toLocaleDateString()}
+
+                                    <br />
+
+                                    <small>
+
+                                        {new Date(a.fecha)
+                                            .toLocaleTimeString()}
+
+                                    </small>
+
+                                </td>
+
+                                <td>
+                                    {a.usuario}
+                                </td>
+
+                                <td>
+
+                                    <span
+                                        className={
+                                            getActionClass(
+                                                a.accion
+                                            )
+                                        }
+                                    >
+
+                                        {a.accion}
+
+                                    </span>
+
+                                </td>
+
+                                <td>
+                                    {a.detalle}
+                                </td>
+
+                            </tr>
+
+                        ))}
+
+                        </tbody>
+
+                    </table>
+
+                </div>
 
             </div>
 
