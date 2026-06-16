@@ -27,6 +27,7 @@ public class IngresoService {
     private final ProductoRepository productoRepository;
     private final StockRepository stockRepository;
     private final UsuarioRepository usuarioRepository;
+    private final AuditoriaService auditoriaService;
 
     public void registrarIngreso(
             MovimientoRequestDTO dto,
@@ -66,5 +67,13 @@ public class IngresoService {
         ingreso.setUsuario(usuario);
 
         ingresoRepository.save(ingreso);
+
+        auditoriaService.registrar(
+                "INGRESO_REGISTRADO",
+                "Ingreso de "
+                        + dto.getCantidad()
+                        + " unidades - Producto: "
+                        + producto.getNombre()
+        );
     }
 }

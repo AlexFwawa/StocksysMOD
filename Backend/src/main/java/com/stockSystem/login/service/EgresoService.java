@@ -27,6 +27,7 @@ public class EgresoService {
     private final ProductoRepository productoRepository;
     private final StockRepository stockRepository;
     private final UsuarioRepository usuarioRepository;
+    private final AuditoriaService auditoriaService;
 
     public Egreso crearEgreso(MovimientoRequestDTO dto) {
 
@@ -118,5 +119,13 @@ public class EgresoService {
         egreso.setUsuario(usuario);
 
         egresoRepository.save(egreso);
+
+        auditoriaService.registrar(
+                "EGRESO_REGISTRADO",
+                "Egreso de "
+                        + dto.getCantidad()
+                        + " unidades - Producto: "
+                        + producto.getNombre()
+        );
     }
 }
