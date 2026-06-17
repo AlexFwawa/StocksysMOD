@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SIREN — Gestión de stock y ventas | BFP SYSTEM</title>
+<link rel="icon" href="assets/compass.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="nav">
+  <a class="brand" href="#/" data-view="home" data-scroll="top">
+    <img src="assets/compass.png" alt="SIREN" class="brand-logo">
+    <span>SIREN<small class="brand-by">by BFP SYSTEM</small></span>
+  </a>
+  <nav class="nav-links">
+    <a href="#/" data-view="home" data-scroll="top">Inicio</a>
+    <a href="#/" data-view="home" data-scroll="beneficios">Beneficios</a>
+    <a href="#/" data-view="home" data-scroll="rubros">Rubros</a>
+    <a href="#/manuales" data-view="manuales">Recursos</a>
+    <a href="#/" data-view="home" data-scroll="contacto" class="nav-cta">Solicitar demo</a>
+  </nav>
+</header>
+
+<!-- ===================== HOME ===================== -->
+<main id="view-home" class="view">
+
+  <section class="hero">
+    <img src="assets/compass.png" alt="" class="hero-compass">
+    <h1>SIREN</h1>
+    <p class="hero-sub">Gestión de stock y ventas para tu negocio</p>
+    <p class="hero-desc">El sistema que ordena tu inventario, controla las entradas y salidas de mercadería
+       y te muestra el estado de tu negocio en tiempo real. Simple, seguro y listo para cualquier rubro.</p>
+    <div class="hero-btns">
+      <a class="btn btn-primary" href="#/" data-view="home" data-scroll="contacto">Solicitar una demo</a>
+      <a class="btn btn-ghost" href="#/" data-view="home" data-scroll="descargar">Probar / descargar</a>
+    </div>
+    <p class="hero-demo">Un producto de BFP SYSTEM</p>
+  </section>
+
+  <section id="beneficios" class="section">
+    <h2 class="section-title">¿Por qué SIREN?</h2>
+    <p class="section-lead">Reemplazá las planillas y el control manual por una herramienta que trabaja para vos.</p>
+    <div class="grid" id="beneficiosGrid"></div>
+  </section>
+
+  <section id="rubros" class="section section-alt">
+    <h2 class="section-title">Para cualquier rubro</h2>
+    <p class="section-lead">Si tu negocio maneja stock, SIREN se adapta. No importa qué vendas.</p>
+    <div class="rubros" id="rubrosWrap"></div>
+  </section>
+
+  <section id="funciones" class="section">
+    <h2 class="section-title">Todo lo que necesitás</h2>
+    <p class="section-lead">Las funciones esenciales para gestionar tu stock, sin vueltas.</p>
+    <div class="grid" id="funcionesGrid"></div>
+  </section>
+
+  <section id="descargar" class="section section-alt">
+    <h2 class="section-title">Probá SIREN</h2>
+    <div class="dl-wrap">
+      <div class="dl-main">
+        <h3>Versión demo</h3>
+        <p>Descargá la demo de SIREN y conocé cómo puede ordenar el stock de tu negocio.</p>
+        <button id="dlBtn" class="btn btn-primary">⬇ Descargar demo</button>
+        <div id="dlProgress" class="progress" hidden><div id="dlBar" class="progress-bar"></div></div>
+        <p id="dlStatus" class="dl-status"></p>
+        <p class="dl-note">Descarga de demostración. Para una implementación a medida, escribinos.</p>
+      </div>
+      <div class="dl-docs">
+        <h3>Material</h3>
+        <ul class="dl-list">
+          <li><a href="manuales/SIREN_Manual_Usuario.docx" download>Guía de uso (.docx)</a></li>
+          <li><a href="manuales/SIREN_Manual_Tecnico.docx" download>Ficha técnica (.docx)</a></li>
+        </ul>
+        <p class="dl-note">También podés verlos online en <a href="#/manuales" data-view="manuales">Recursos</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" class="section">
+    <h2 class="section-title">Llevá SIREN a tu empresa</h2>
+    <p class="section-lead">Contanos de tu negocio y te preparamos una demo a medida.</p>
+    <div class="contacto">
+      <a class="btn btn-primary btn-lg" href="mailto:contacto@bfpsystem.com?subject=Quiero%20una%20demo%20de%20SIREN">Solicitar una demo</a>
+      <p class="contacto-mail">contacto@bfpsystem.com</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================== RECURSOS ===================== -->
+<main id="view-manuales" class="view" hidden>
+  <section class="section">
+    <h2 class="section-title">Recursos</h2>
+    <p class="section-lead">Conocé SIREN en detalle. Mirá el material online o descargalo.</p>
+    <div class="grid grid-3" id="recursosGrid"></div>
+  </section>
+</main>
+
+<!-- ===================== LECTOR ===================== -->
+<main id="view-lector" class="view" hidden>
+  <div class="reader-bar">
+    <button id="readerBack" class="btn btn-ghost btn-sm">← Volver a recursos</button>
+    <span id="readerTitle" class="reader-title"></span>
+  </div>
+  <iframe id="readerFrame" class="reader-frame" title="Lector de documento"></iframe>
+</main>
+
+<footer class="footer">
+  <div class="footer-brand">BFP SYSTEM</div>
+  <p class="footer-team">Brem Federico · Fornier Alex · Perez Nehuen</p>
+  <p>SIREN — Sistema de gestión de stock y ventas · © 2026 BFP SYSTEM</p>
+</footer>
+
+<!-- ===== Capas (carga ordenada): Persistencia -> Servicios -> Presentación -> Controladores -> Composition Root ===== -->
+<script src="js/persistence/RecursoRepository.js"></script>
+<script src="js/persistence/ContenidoRepository.js"></script>
+<script src="js/persistence/DemoRepository.js"></script>
+<script src="js/services/RecursoService.js"></script>
+<script src="js/services/ContenidoService.js"></script>
+<script src="js/services/DescargaService.js"></script>
+<script src="js/services/NavegacionService.js"></script>
+<script src="js/ui/Vista.js"></script>
+<script src="js/controllers/PaginaController.js"></script>
+<script src="js/controllers/NavegacionController.js"></script>
+<script src="js/controllers/DescargaController.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

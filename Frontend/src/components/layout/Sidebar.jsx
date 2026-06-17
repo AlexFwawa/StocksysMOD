@@ -134,6 +134,24 @@ const Sidebar = ({ onLogout }) => {
             Ajustes
           </button>
 
+          {/* Manual */}
+          <a
+            href="http://localhost:8081"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="sidebar-theme-toggle"
+            aria-label="Manual"
+            style={{
+              textDecoration: "none"
+            }}
+          >
+            <svg viewBox="0 0 24 24">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 0 4 24V4.5A2.5 2.5 0 0 1 6.5 2Z" />
+            </svg>
+            Manual
+        </a>
+
           {/* Theme toggle */}
           <button className="sidebar-theme-toggle" onClick={toggleTheme} aria-label="Cambiar tema">
             {theme === 'light' ? (
