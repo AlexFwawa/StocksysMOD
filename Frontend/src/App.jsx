@@ -7,6 +7,7 @@ import ToastContainer from './components/ui/ToastContainer';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import InformesPage from "./pages/InformesPage";
+import AuditoriaPage from "./pages/AuditoriaPage";
 
 function App() {
   const [auth, setAuth] = useState(localStorage.getItem('isAuthenticated') === 'true');
@@ -39,6 +40,15 @@ function App() {
               element={
                 auth
                   ? <InformesPage onLogout={logout} />
+                  : <Navigate to="/login" />
+              }
+            />
+
+            <Route
+              path="/auditoria"
+              element={
+                auth
+                  ? <AuditoriaPage onLogout={logout} />
                   : <Navigate to="/login" />
               }
             />

@@ -1,14 +1,13 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { useTheme } from '../../hooks/useTheme';
 import logo from '../../assets/imagenes/logo1.jpeg';
 import SettingsModal from '../ui/SettingsModal';
 
 const Sidebar = ({ onLogout }) => {
-  const { theme, toggleTheme } = useTheme();
   const location = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [settingsOpen, setSettingsOpen] = useState(false);
+  const [informesOpen, setInformesOpen] = useState(false);
   const userName = localStorage.getItem('user') || 'Admin';
 
   const navItems = [
@@ -19,13 +18,8 @@ const Sidebar = ({ onLogout }) => {
         <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" /><rect x="14" y="3" width="7" height="7" /><rect x="14" y="14" width="7" height="7" /><rect x="3" y="14" width="7" height="7" /></svg>
       ),
     },
-    {
-      path: '/informes',
-      label: 'Informes',
-      icon: (
-        <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10" /><line x1="12" y1="20" x2="12" y2="4" /><line x1="6" y1="20" x2="6" y2="14" /></svg>
-      ),
-    },
+
+
     {
       path: '/ventas',
       label: 'Ventas',
@@ -86,6 +80,48 @@ const Sidebar = ({ onLogout }) => {
               {item.label}
             </Link>
           ))}
+          <div className="sidebar-nav-group">
+            <button
+              className="sidebar-nav-item"
+              onClick={() =>
+                setInformesOpen(!informesOpen)
+              }>
+              <span className="sidebar-nav-icon">
+                <svg viewBox="0 0 24 24">
+                  <line x1="18" y1="20" x2="18" y2="10" />
+                  <line x1="12" y1="20" x2="12" y2="4" />
+                  <line x1="6" y1="20" x2="6" y2="14" />
+                </svg>
+              </span>
+              Informes
+            </button>
+
+            {informesOpen && (
+
+              <div
+                style={{
+                  paddingLeft: "2rem",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "0.3rem"
+                }}
+              >
+                <Link
+                  to="/informes"
+                  className="sidebar-nav-item"
+                >
+                  Movimientos
+                </Link>
+
+                <Link
+                  to="/auditoria"
+                  className="sidebar-nav-item"
+                >
+                  Auditoría
+                </Link>
+              </div>
+            )}
+          </div>
         </nav>
 
         {/* Footer */}
@@ -96,15 +132,25 @@ const Sidebar = ({ onLogout }) => {
             Ajustes
           </button>
 
-          {/* Theme toggle */}
-          <button className="sidebar-theme-toggle" onClick={toggleTheme} aria-label="Cambiar tema">
-            {theme === 'light' ? (
-              <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" /></svg>
-            ) : (
-              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5" /><line x1="12" y1="1" x2="12" y2="3" /><line x1="12" y1="21" x2="12" y2="23" /><line x1="4.22" y1="4.22" x2="5.64" y2="5.64" /><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" /><line x1="1" y1="12" x2="3" y2="12" /><line x1="21" y1="12" x2="23" y2="12" /><line x1="4.22" y1="19.78" x2="5.64" y2="18.36" /><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" /></svg>
-            )}
-            {theme === 'light' ? 'Modo oscuro' : 'Modo claro'}
-          </button>
+          {/* Manual */}
+          <a
+            href="http://localhost:8081"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="sidebar-theme-toggle"
+            aria-label="Manual"
+            style={{
+              textDecoration: "none"
+            }}
+          >
+            <svg viewBox="0 0 24 24">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 0 4 24V4.5A2.5 2.5 0 0 1 6.5 2Z" />
+            </svg>
+            Manual
+          </a>
+
+
 
           {/* User */}
           <div className="sidebar-user">

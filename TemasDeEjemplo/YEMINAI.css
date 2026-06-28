@@ -1,0 +1,38 @@
+/* StockSys Theme: yeminai */
+/* base: dark */
+/* id: yeminai */
+/* bgBlur: 0 */
+/* bgGradient: {"enabled":true,"color1":"#0f111a","color2":"#2d1b4e","angle":135} */
+
+:root {
+  --bg-primary: #0f111a;
+  --bg-secondary: #161925;
+  --bg-tertiary: #1f2333;
+  --bg-hover: #292d42;
+
+  --sidebar-bg: #0a0b10;
+  --sidebar-text: #dbeafe;
+  --sidebar-text-active: #ffffff;
+  --sidebar-accent: #c084fc;
+
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #64748b;
+
+  --accent: #a855f7;
+  --accent-hover: #d8b4fe;
+
+  --success: #10b981;
+  --danger: #f43f5e;
+  --warning: #fbbf24;
+
+  --border-color: #334155;
+  --border-light: #475569;
+
+  --table-header-bg: #2e1065;
+  --table-row-hover: #3b236d;
+
+  --input-bg: #0f111a;
+  --input-border: #334155;
+  --input-focus-border: #a855f7;
+}

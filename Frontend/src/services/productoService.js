@@ -1,8 +1,6 @@
 import api from "../api/axios";
 
-// =========================
-// TIPOS UI
-// =========================
+// Tipos UI
 export const PRODUCT_TYPES = [
 
     {
@@ -46,9 +44,7 @@ export const PRODUCT_TYPES = [
     }
 ];
 
-// =========================
-// GET PRODUCTOS
-// =========================
+// GET productos
 export const obtenerProductos = async () => {
 
     const response = await api.get("/productos");
@@ -70,9 +66,8 @@ export const obtenerProductos = async () => {
     }));
 };
 
-// =========================
-// CREAR PRODUCTO
-// =========================
+
+// Crear Producto
 export const crearProducto = async (producto) => {
 
     // Usar categoriaId directo si viene del form, sino buscar por nombre
@@ -103,9 +98,8 @@ export const crearProducto = async (producto) => {
     return response.data;
 };
 
-// =========================
+
 // Actualizar Producto
-// =========================
 export const actualizarProducto = async (
     id,
     producto
@@ -139,9 +133,7 @@ export const actualizarProducto = async (
     return response.data;
 };
 
-// =========================
 // Eliminar Producto
-// =========================
 export const eliminarProducto = async (id) => {
 
     await api.delete(`/productos/${id}`);

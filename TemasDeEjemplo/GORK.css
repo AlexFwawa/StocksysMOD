@@ -1,0 +1,38 @@
+/* StockSys Theme: GORK */
+/* base: dark */
+/* id: gork */
+/* bgBlur: 0 */
+/* bgGradient: {"enabled":true,"color1":"#0a0f1a","color2":"#1a1428","angle":135} */
+
+:root {
+  --bg-primary: #0a0f1a;
+  --bg-secondary: #12181f;
+  --bg-tertiary: #1c2533;
+  --bg-hover: #242f42;
+
+  --sidebar-bg: #05080f;
+  --sidebar-text: #e0e7ff;
+  --sidebar-text-active: #ffffff;
+  --sidebar-accent: #22d3ee;
+
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+
+  --accent: #22d3ee;
+  --accent-hover: #67e8f9;
+
+  --success: #34d399;
+  --danger: #f87171;
+  --warning: #fbbf24;
+
+  --border-color: #334155;
+  --border-light: #67e8f9;
+
+  --table-header-bg: #1e2937;
+  --table-row-hover: #1f2a3c;
+
+  --input-bg: #0f1722;
+  --input-border: #475569;
+  --input-focus-border: #22d3ee;
+}

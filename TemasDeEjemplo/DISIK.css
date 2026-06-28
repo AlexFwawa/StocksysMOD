@@ -1,0 +1,38 @@
+/* StockSys Theme: DISIK */
+/* base: dark */
+/* id: disik */
+/* bgBlur: 0 */
+/* bgGradient: {"enabled":true,"color1":"#0a120e","color2":"#0f1a18","angle":160} */
+
+:root {
+  --bg-primary: #0a120e;
+  --bg-secondary: #0f1a15;
+  --bg-tertiary: #16261f;
+  --bg-hover: #1e3a2e;
+
+  --sidebar-bg: #050a07;
+  --sidebar-text: #d1e8db;
+  --sidebar-text-active: #ffffff;
+  --sidebar-accent: #2dd4bf;
+
+  --text-primary: #e6f0eb;
+  --text-secondary: #b8ccc3;
+  --text-muted: #7a9b8b;
+
+  --accent: #2dd4bf;
+  --accent-hover: #5ee8d4;
+
+  --success: #4ade80;
+  --danger: #fb7185;
+  --warning: #fbbf24;
+
+  --border-color: #1f3d2f;
+  --border-light: #34d399;
+
+  --table-header-bg: #122018;
+  --table-row-hover: #1a2e23;
+
+  --input-bg: #0c1610;
+  --input-border: #2d4a3a;
+  --input-focus-border: #2dd4bf;
+}

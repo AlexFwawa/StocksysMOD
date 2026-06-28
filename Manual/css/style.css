@@ -1,0 +1,116 @@
+:root{
+  --navy:#0E2A47; --sea:#1F5D7A; --brass:#A9842C; --sand:#F4EEE1;
+  --sandline:#D9CDB4; --ink:#22282E; --paper:#FBF8F1; --white:#ffffff;
+  --radius:12px; --maxw:1080px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; font-family:'Segoe UI',system-ui,Arial,sans-serif; color:var(--ink);
+  background:var(--paper); line-height:1.6;
+}
+img{max-width:100%}
+a{color:var(--sea);text-decoration:none}
+
+/* ---------- NAV ---------- */
+.nav{
+  position:sticky; top:0; z-index:50; display:flex; align-items:center; justify-content:space-between;
+  gap:16px; padding:10px 24px; background:var(--navy); color:#fff;
+  box-shadow:0 2px 10px rgba(0,0,0,.18);
+}
+.brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:700;font-size:1.25rem;letter-spacing:.06em}
+.brand-logo{width:34px;height:34px}
+.nav-links{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.nav-links a{color:#dfe7ee;padding:7px 12px;border-radius:8px;font-size:.95rem}
+.nav-links a:hover{background:rgba(255,255,255,.1);color:#fff}
+.nav-cta{background:var(--brass);color:#fff!important}
+.nav-cta:hover{background:#946f1f}
+
+/* ---------- HERO ---------- */
+.hero{
+  text-align:center; padding:64px 24px 56px; max-width:var(--maxw); margin:0 auto;
+}
+.hero-compass{width:120px;height:120px;margin-bottom:8px;filter:drop-shadow(0 4px 10px rgba(14,42,71,.18))}
+.hero h1{margin:.1em 0 0;font-size:3.6rem;color:var(--navy);letter-spacing:.12em}
+.hero-sub{margin:.1em 0 .8em;font-style:italic;color:var(--brass);font-size:1.3rem}
+.hero-desc{max-width:640px;margin:0 auto 1.6em;color:#3a4651;font-size:1.08rem}
+.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.hero-demo{margin-top:18px;color:#8a8472;font-size:.85rem;letter-spacing:.04em;text-transform:uppercase}
+
+/* ---------- BUTTONS ---------- */
+.btn{display:inline-block;border:none;cursor:pointer;font:inherit;font-weight:600;
+  padding:12px 22px;border-radius:10px;transition:.15s;text-align:center}
+.btn-sm{padding:8px 14px;font-size:.9rem}
+.btn-primary{background:var(--sea);color:#fff}
+.btn-primary:hover{background:var(--navy)}
+.btn-ghost{background:transparent;color:var(--navy)!important;border:2px solid var(--sandline)}
+.btn-ghost:hover{border-color:var(--brass);color:var(--brass)!important}
+
+/* ---------- SECTIONS ---------- */
+.section{max-width:var(--maxw);margin:0 auto;padding:56px 24px}
+.section-alt{background:var(--sand);max-width:none}
+.section-alt > *{max-width:var(--maxw);margin-left:auto;margin-right:auto}
+.section-title{font-size:1.9rem;color:var(--navy);text-align:center;margin:0 0 .2em;
+  position:relative;padding-bottom:.35em}
+.section-title::after{content:"";display:block;width:64px;height:3px;background:var(--brass);margin:.4em auto 0}
+.section-lead{text-align:center;color:#4a5662;max-width:620px;margin:0 auto 2.2em}
+
+/* ---------- GRID / CARDS ---------- */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.grid-3{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.card{background:var(--white);border:1px solid var(--sandline);border-radius:var(--radius);
+  padding:24px;box-shadow:0 2px 8px rgba(14,42,71,.05)}
+.card-ic{font-size:1.8rem;margin-bottom:8px}
+.card h3{margin:.2em 0 .4em;color:var(--navy);font-size:1.15rem}
+.card p{margin:0;color:#4a5662;font-size:.96rem}
+.card-doc{display:flex;flex-direction:column}
+.card-doc p{flex:1}
+.card-actions{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+.card-actions .btn{flex:1}
+
+/* ---------- TECH ---------- */
+.tech-badges{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:30px}
+.badge{background:var(--navy);color:#fff;padding:8px 16px;border-radius:999px;font-size:.92rem;font-weight:600}
+.figure{margin:0;text-align:center}
+.figure img{border:1px solid var(--sandline);border-radius:var(--radius);background:#fff;padding:12px}
+.figure figcaption{color:#6b6456;font-style:italic;font-size:.9rem;margin-top:10px}
+
+/* ---------- DOWNLOAD ---------- */
+.dl-wrap{display:grid;grid-template-columns:1.3fr 1fr;gap:24px}
+.dl-main,.dl-docs{background:var(--white);border:1px solid var(--sandline);border-radius:var(--radius);padding:26px}
+.dl-main h3,.dl-docs h3{margin-top:0;color:var(--navy)}
+.dl-note{color:#8a8472;font-size:.88rem;margin-top:14px}
+.dl-status{font-weight:600;color:var(--sea);min-height:1.2em;margin:12px 0 0}
+.progress{height:12px;background:var(--sand);border-radius:999px;overflow:hidden;margin-top:16px;border:1px solid var(--sandline)}
+.progress-bar{height:100%;width:0;background:linear-gradient(90deg,var(--sea),var(--brass));transition:width .15s}
+.dl-list{list-style:none;padding:0;margin:0}
+.dl-list li{padding:9px 0;border-bottom:1px solid var(--sand)}
+.dl-list li:last-child{border-bottom:none}
+.dl-list a{font-weight:600}
+
+/* ---------- READER ---------- */
+.reader-bar{display:flex;align-items:center;gap:16px;padding:12px 24px;background:var(--navy);color:#fff;position:sticky;top:0;z-index:10}
+.reader-title{font-weight:600}
+.reader-frame{display:block;width:100%;height:calc(100vh - 56px);border:none;background:#FBF8F1}
+
+/* ---------- FOOTER ---------- */
+.footer{background:var(--navy);color:#cdd7e0;text-align:center;padding:22px 24px;font-size:.88rem;margin-top:20px}
+
+@media(max-width:760px){
+  .hero h1{font-size:2.7rem}
+  .dl-wrap{grid-template-columns:1fr}
+  .nav{flex-direction:column;gap:8px;align-items:stretch}
+  .nav-links{justify-content:center}
+}
+
+/* ---------- AÑADIDOS: sitio comercial BFP SYSTEM ---------- */
+.brand > span{display:inline-flex;flex-direction:column;line-height:1.05}
+.brand-by{font-size:.58rem;font-weight:400;letter-spacing:.14em;color:var(--brass)}
+.rubros{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;max-width:760px;margin:0 auto}
+.rubro{background:#fff;border:1px solid var(--sandline);color:var(--navy);padding:10px 18px;border-radius:999px;font-weight:600;font-size:.95rem}
+.rubro:last-child{background:var(--brass);color:#fff;border-color:var(--brass)}
+.contacto{text-align:center}
+.btn-lg{padding:16px 34px;font-size:1.1rem}
+.contacto-mail{margin-top:16px;color:var(--sea);font-weight:600}
+.footer-brand{font-weight:700;letter-spacing:.16em;color:#fff;font-size:1.15rem}
+.footer-team{color:var(--brass);margin:.35em 0 .7em;font-weight:600}

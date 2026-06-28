@@ -1,0 +1,38 @@
+/* StockSys Theme: PEPESITY */
+/* base: dark */
+/* id: pepesity */
+/* bgBlur: 0 */
+/* bgGradient: {"enabled":true,"color1":"#07111f","color2":"#1b1028","angle":135} */
+
+:root {
+  --bg-primary: #101624;
+  --bg-secondary: #171f31;
+  --bg-tertiary: #202a40;
+  --bg-hover: #2b3854;
+
+  --sidebar-bg: #0b1020;
+  --sidebar-text: #d7e3ff;
+  --sidebar-text-active: #ffffff;
+  --sidebar-accent: #8b5cf6;
+
+  --text-primary: #f8fafc;
+  --text-secondary: #d1d5db;
+  --text-muted: #94a3b8;
+
+  --accent: #8b5cf6;
+  --accent-hover: #a78bfa;
+
+  --success: #22c55e;
+  --danger: #ef4444;
+  --warning: #f59e0b;
+
+  --border-color: #5b4b8a;
+  --border-light: #8b5cf6;
+
+  --table-header-bg: #2a174d;
+  --table-row-hover: #253355;
+
+  --input-bg: #151d2f;
+  --input-border: #4338ca;
+  --input-focus-border: #8b5cf6;
+}

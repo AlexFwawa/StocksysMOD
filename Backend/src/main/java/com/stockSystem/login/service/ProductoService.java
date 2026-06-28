@@ -24,6 +24,7 @@ public class ProductoService {
     private final IngresoRepository ingresoRepository;
     private final EgresoRepository egresoRepository;
     private final ProductoMapper productoMapper;
+    private final AuditoriaService auditoriaService;
 
     public ProductoResponseDTO crearProducto(ProductoRequestDTO dto) {
 
@@ -43,12 +44,19 @@ public class ProductoService {
 
         Producto productoGuardado = productoRepository.save(producto);
 
+        auditoriaService.registrar(
+                "PRODUCTO_CREADO",
+                "Producto: " + productoGuardado.getNombre()
+        );
+
         return productoMapper.toDTO(productoGuardado);
     }
 
+
     public List<ProductoResponseDTO> obtenerProductos() {
 
-        return productoRepository.findAllByOrderByCodProdAsc()
+        return productoRepository
+                .findByActivoTrueOrderByCodProdAsc()
                 .stream()
                 .map(productoMapper::toDTO)
                 .toList();
@@ -86,6 +94,11 @@ public class ProductoService {
 
         productoRepository.save(producto);
 
+        auditoriaService.registrar(
+                "PRODUCTO_EDITADO",
+                "Producto: " + producto.getNombre()
+        );
+
         return productoMapper.toDTO(producto);
     }
 
@@ -100,14 +113,12 @@ public class ProductoService {
                         )
                 );
 
-        // eliminar movimientos
-        ingresoRepository.deleteByProductoCodProd(id);
-        egresoRepository.deleteByProductoCodProd(id);
+        producto.setActivo(false);
+        productoRepository.save(producto);
 
-        // eliminar stock primero
-        stockRepository.delete(producto.getStock());
-
-        // eliminar producto
-        productoRepository.delete(producto);
+        auditoriaService.registrar(
+                "PRODUCTO_ELIMINADO",
+                "Producto: " + producto.getNombre()
+        );
     }
 }

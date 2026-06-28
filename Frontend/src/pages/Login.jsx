@@ -38,13 +38,13 @@ const Login = ({ onLogin }) => {
 
     try {
 
-      // 🔥 REQUEST REAL AL BACKEND
+      //REQUEST REAL AL BACKEND
       const data = await loginRequest(
         credentials.email,
         credentials.password
       );
 
-      // 🔥 GUARDAR JWT
+      //GUARDAR JWT
       localStorage.setItem('token', data.token);
 
       localStorage.setItem('isAuthenticated', 'true');

@@ -7,6 +7,7 @@ import './styles/dashboard.css'
 import './styles/table.css'
 import './styles/modal.css'
 import './styles/toast.css'
+import './styles/theme-customizer.css'
 import './styles/login.css'
 import App from './App.jsx'
 

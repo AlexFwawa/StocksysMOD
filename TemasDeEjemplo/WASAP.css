@@ -1,0 +1,38 @@
+/* StockSys Theme: WASAP */
+/* base: dark */
+/* id: wasap */
+/* bgBlur: 0 */
+/* bgGradient: {"enabled":true,"color1":"#0b141a","color2":"#075e54","angle":135} */
+
+:root {
+  --bg-primary: #0b141a;
+  --bg-secondary: #111b21;
+  --bg-tertiary: #1f2d34;
+  --bg-hover: #2a3942;
+
+  --sidebar-bg: #0b141a;
+  --sidebar-text: #d1d7db;
+  --sidebar-text-active: #ffffff;
+  --sidebar-accent: #25d366;
+
+  --text-primary: #e9edef;
+  --text-secondary: #d1d7db;
+  --text-muted: #8696a0;
+
+  --accent: #25d366;
+  --accent-hover: #21c063;
+
+  --success: #25d366;
+  --danger: #f15c6d;
+  --warning: #ffb020;
+
+  --border-color: #2f3b44;
+  --border-light: #25d366;
+
+  --table-header-bg: #1c272e;
+  --table-row-hover: #202c33;
+
+  --input-bg: #182229;
+  --input-border: #2a3942;
+  --input-focus-border: #25d366;
+}

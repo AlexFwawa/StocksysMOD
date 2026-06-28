@@ -41,7 +41,18 @@ services:
     restart: always
     networks:
       - tfi_network
-
+   
+  manual:
+    build:
+      context: ./Manual
+      dockerfile: Dockerfile
+    container_name: manual_app
+    ports:
+      - "8081:80"
+    restart: always
+    networks:
+      - tfi_network
+      
 volumes:
   postgres_data:
 
