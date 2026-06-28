@@ -19,7 +19,6 @@ const Sidebar = ({ onLogout }) => {
       ),
     },
 
-
     {
       path: '/ventas',
       label: 'Ventas',
@@ -149,8 +148,6 @@ const Sidebar = ({ onLogout }) => {
             </svg>
             Manual
           </a>
-
-
 
           {/* User */}
           <div className="sidebar-user">
