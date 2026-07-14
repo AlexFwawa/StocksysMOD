@@ -1,0 +1,71 @@
+version: '3.9'
+
+services:
+  postgres_db:
+    image: postgres:17-alpine
+    container_name: postgres_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: always
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: "1234"
+      POSTGRES_DB: tfi
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U user -d tfi"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - tfi_network
+
+  backend:
+    build:
+      context: .
+      dockerfile: Backend/Dockerfile
+    container_name: backend_app
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres_db:5432/tfi
+      - SPRING_DATASOURCE_USERNAME=user
+      - SPRING_DATASOURCE_PASSWORD=1234
+    depends_on:
+      postgres_db:
+        condition: service_healthy
+    restart: on-failure:5
+    networks:
+      - tfi_network
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Frontend/Dockerfile
+    container_name: frontend_app
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    restart: always
+    networks:
+      - tfi_network
+   
+  manual:
+    build:
+      context: .
+      dockerfile: Manual/Dockerfile
+    container_name: manual_app
+    ports:
+      - "8081:80"
+    restart: always
+    networks:
+      - tfi_network
+      
+volumes:
+  postgres_data:
+
+networks:
+  tfi_network:
+    driver: bridge
